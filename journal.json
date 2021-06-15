@@ -1,0 +1,145 @@
+{
+  "chaoslib-version": "1.16.0",
+  "platform": "macOS-10.16-x86_64-i386-64bit",
+  "node": "dongdeMacBook-Pro.local",
+  "experiment": {
+    "title": "Does our service tolerate the loss of its exchange file?",
+    "description": "Our service reads data from an exchange file, can it support that file disappearing?",
+    "tags": [
+      "tutorial",
+      "filesystem"
+    ],
+    "steady-state-hypothesis": {
+      "title": "The exchange file must exist",
+      "probes": [
+        {
+          "type": "probe",
+          "name": "service-is-unavailable",
+          "tolerance": [
+            200,
+            503
+          ],
+          "provider": {
+            "type": "http",
+            "url": "http://localhost:8080/"
+          }
+        }
+      ]
+    },
+    "method": [
+      {
+        "name": "move-exchange-file",
+        "type": "action",
+        "provider": {
+          "type": "python",
+          "module": "os",
+          "func": "rename",
+          "arguments": {
+            "src": "./exchange.dat",
+            "dst": "./exchange.dat.old"
+          }
+        }
+      }
+    ],
+    "dry": false
+  },
+  "start": "2021-01-20T09:15:27.626005",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "type": "probe",
+            "name": "service-is-unavailable",
+            "tolerance": [
+              200,
+              503
+            ],
+            "provider": {
+              "type": "http",
+              "url": "http://localhost:8080/"
+            }
+          },
+          "output": {
+            "status": 200,
+            "headers": {
+              "Date": "Wed, 20 Jan 2021 09:15:27 GMT",
+              "Server": "WSGIServer/0.2 CPython/3.8.5",
+              "Content-type": "text/plain",
+              "Content-Length": "26"
+            },
+            "body": "2021-01-20T17:15:26.684333"
+          },
+          "status": "succeeded",
+          "start": "2021-01-20T09:15:27.627216",
+          "end": "2021-01-20T09:15:27.631991",
+          "duration": 0.004775,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "after": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "type": "probe",
+            "name": "service-is-unavailable",
+            "tolerance": [
+              200,
+              503
+            ],
+            "provider": {
+              "type": "http",
+              "url": "http://localhost:8080/"
+            }
+          },
+          "output": {
+            "status": 503,
+            "headers": {
+              "Date": "Wed, 20 Jan 2021 09:15:27 GMT",
+              "Server": "WSGIServer/0.2 CPython/3.8.5",
+              "Content-type": "text/plain",
+              "Content-Length": "26"
+            },
+            "body": "Exchange file is not ready"
+          },
+          "status": "succeeded",
+          "start": "2021-01-20T09:15:27.634370",
+          "end": "2021-01-20T09:15:27.637794",
+          "duration": 0.003424,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "move-exchange-file",
+        "type": "action",
+        "provider": {
+          "type": "python",
+          "module": "os",
+          "func": "rename",
+          "arguments": {
+            "src": "./exchange.dat",
+            "dst": "./exchange.dat.old"
+          }
+        }
+      },
+      "output": null,
+      "status": "succeeded",
+      "start": "2021-01-20T09:15:27.632634",
+      "end": "2021-01-20T09:15:27.633853",
+      "duration": 0.001219
+    }
+  ],
+  "rollbacks": [],
+  "end": "2021-01-20T09:15:27.638382",
+  "duration": 0.026225805282592773
+}

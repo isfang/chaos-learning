@@ -1,0 +1,119 @@
+[36m[2021-01-20 17:08:49 DEBUG] [cli:74][39m ###############################################################################
+[36m[2021-01-20 17:08:49 DEBUG] [cli:75][39m Running command 'run'
+[36m[2021-01-20 17:08:49 DEBUG] [cli:79][39m Using settings file '/Users/dong/.chaostoolkit/settings.yaml'
+[36m[2021-01-20 17:08:51 DEBUG] [settings:26][39m The Chaos Toolkit settings file could not be found at '/Users/dong/.chaostoolkit/settings.yaml'.
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'loader'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'loader'
+[36m[2021-01-20 17:08:51 DEBUG] [caching:25][39m Building activity cache...
+[36m[2021-01-20 17:08:51 DEBUG] [caching:35][39m Cached 2 activities
+[32m[2021-01-20 17:08:51 INFO] [experiment:47][39m Validating the experiment's syntax
+[36m[2021-01-20 17:08:51 DEBUG] [configuration:54][39m Loading configuration...
+[36m[2021-01-20 17:08:51 DEBUG] [secret:75][39m Loading secrets...
+[36m[2021-01-20 17:08:51 DEBUG] [secret:92][39m Secrets loaded
+[32m[2021-01-20 17:08:51 INFO] [experiment:96][39m Experiment looks valid
+[36m[2021-01-20 17:08:51 DEBUG] [caching:42][39m Clearing activities cache
+[36m[2021-01-20 17:08:51 DEBUG] [caching:25][39m Building activity cache...
+[36m[2021-01-20 17:08:51 DEBUG] [caching:35][39m Cached 2 activities
+[36m[2021-01-20 17:08:51 DEBUG] [configuration:54][39m Loading configuration...
+[36m[2021-01-20 17:08:51 DEBUG] [secret:75][39m Loading secrets...
+[36m[2021-01-20 17:08:51 DEBUG] [secret:92][39m Secrets loaded
+[32m[2021-01-20 17:08:51 INFO] [run:323][39m Running experiment: Does our service tolerate the loss of its exchange file?
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:39][39m Initializing controls
+[32m[2021-01-20 17:08:51 INFO] [run:342][39m Steady-state strategy: default
+[32m[2021-01-20 17:08:51 INFO] [run:345][39m Rollbacks strategy: default
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'experiment'
+[36m[2021-01-20 17:08:51 DEBUG] [run:466][39m Running steady-state hypothesis before the method
+[32m[2021-01-20 17:08:51 INFO] [hypothesis:183][39m Steady state hypothesis: The exchange file must exist
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:08:51 INFO] [activity:160][39m Probe: service-is-unavailable
+[36m[2021-01-20 17:08:51 DEBUG] [activity:179][39m   => succeeded with '{'status': 200, 'headers': {'Date': 'Wed, 20 Jan 2021 09:08:51 GMT', 'Server': 'WSGIServer/0.2 CPython/3.8.5', 'Content-type': 'text/plain', 'Content-Length': '26'}, 'body': '2021-01-20T17:08:50.940785'}'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:08:51 DEBUG] [hypothesis:211][39m allowed tolerance is [200, 503]
+[32m[2021-01-20 17:08:51 INFO] [hypothesis:221][39m Steady state hypothesis is met!
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[32m[2021-01-20 17:08:51 INFO] [run:553][39m Playing your experiment's method now...
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'method'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:08:51 INFO] [activity:160][39m Action: move-exchange-file
+[36m[2021-01-20 17:08:51 DEBUG] [activity:181][39m   => succeeded without any result value
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'method'
+[36m[2021-01-20 17:08:51 DEBUG] [run:496][39m Running steady-state hypothesis after the method
+[32m[2021-01-20 17:08:51 INFO] [hypothesis:183][39m Steady state hypothesis: The exchange file must exist
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:08:51 INFO] [activity:160][39m Probe: service-is-unavailable
+[36m[2021-01-20 17:08:51 DEBUG] [activity:179][39m   => succeeded with '{'status': 500, 'headers': {'Date': 'Wed, 20 Jan 2021 09:08:51 GMT', 'Server': 'WSGIServer/0.2 CPython/3.8.5', 'Content-Type': 'text/plain', 'Content-Length': '59'}, 'body': 'A server error occurred.  Please contact the administrator.'}'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:08:51 DEBUG] [hypothesis:211][39m allowed tolerance is [200, 503]
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[31m[2021-01-20 17:08:51 CRITICAL] [run:507][39m Steady state probe 'service-is-unavailable' is not in the given tolerance so failing this experiment
+[32m[2021-01-20 17:08:51 INFO] [run:421][39m Experiment ended with status: deviated
+[32m[2021-01-20 17:08:51 INFO] [run:423][39m The steady-state has deviated, a weakness may have been discovered
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:355][39m No controls to apply on 'experiment'
+[36m[2021-01-20 17:08:51 DEBUG] [__init__:72][39m Cleaning up controls
+[36m[2021-01-20 17:08:51 DEBUG] [caching:42][39m Clearing activities cache
+[36m[2021-01-20 17:15:24 DEBUG] [cli:74][39m ###############################################################################
+[36m[2021-01-20 17:15:24 DEBUG] [cli:75][39m Running command 'run'
+[36m[2021-01-20 17:15:24 DEBUG] [cli:79][39m Using settings file '/Users/dong/.chaostoolkit/settings.yaml'
+[36m[2021-01-20 17:15:27 DEBUG] [settings:26][39m The Chaos Toolkit settings file could not be found at '/Users/dong/.chaostoolkit/settings.yaml'.
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'loader'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'loader'
+[36m[2021-01-20 17:15:27 DEBUG] [caching:25][39m Building activity cache...
+[36m[2021-01-20 17:15:27 DEBUG] [caching:35][39m Cached 2 activities
+[32m[2021-01-20 17:15:27 INFO] [experiment:47][39m Validating the experiment's syntax
+[36m[2021-01-20 17:15:27 DEBUG] [configuration:54][39m Loading configuration...
+[36m[2021-01-20 17:15:27 DEBUG] [secret:75][39m Loading secrets...
+[36m[2021-01-20 17:15:27 DEBUG] [secret:92][39m Secrets loaded
+[32m[2021-01-20 17:15:27 INFO] [experiment:96][39m Experiment looks valid
+[36m[2021-01-20 17:15:27 DEBUG] [caching:42][39m Clearing activities cache
+[36m[2021-01-20 17:15:27 DEBUG] [caching:25][39m Building activity cache...
+[36m[2021-01-20 17:15:27 DEBUG] [caching:35][39m Cached 2 activities
+[36m[2021-01-20 17:15:27 DEBUG] [configuration:54][39m Loading configuration...
+[36m[2021-01-20 17:15:27 DEBUG] [secret:75][39m Loading secrets...
+[36m[2021-01-20 17:15:27 DEBUG] [secret:92][39m Secrets loaded
+[32m[2021-01-20 17:15:27 INFO] [run:323][39m Running experiment: Does our service tolerate the loss of its exchange file?
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:39][39m Initializing controls
+[32m[2021-01-20 17:15:27 INFO] [run:342][39m Steady-state strategy: default
+[32m[2021-01-20 17:15:27 INFO] [run:345][39m Rollbacks strategy: default
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'experiment'
+[36m[2021-01-20 17:15:27 DEBUG] [run:466][39m Running steady-state hypothesis before the method
+[32m[2021-01-20 17:15:27 INFO] [hypothesis:183][39m Steady state hypothesis: The exchange file must exist
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:15:27 INFO] [activity:160][39m Probe: service-is-unavailable
+[36m[2021-01-20 17:15:27 DEBUG] [activity:179][39m   => succeeded with '{'status': 200, 'headers': {'Date': 'Wed, 20 Jan 2021 09:15:27 GMT', 'Server': 'WSGIServer/0.2 CPython/3.8.5', 'Content-type': 'text/plain', 'Content-Length': '26'}, 'body': '2021-01-20T17:15:26.684333'}'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:15:27 DEBUG] [hypothesis:211][39m allowed tolerance is [200, 503]
+[32m[2021-01-20 17:15:27 INFO] [hypothesis:221][39m Steady state hypothesis is met!
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[32m[2021-01-20 17:15:27 INFO] [run:553][39m Playing your experiment's method now...
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'method'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:15:27 INFO] [activity:160][39m Action: move-exchange-file
+[36m[2021-01-20 17:15:27 DEBUG] [activity:181][39m   => succeeded without any result value
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'method'
+[36m[2021-01-20 17:15:27 DEBUG] [run:496][39m Running steady-state hypothesis after the method
+[32m[2021-01-20 17:15:27 INFO] [hypothesis:183][39m Steady state hypothesis: The exchange file must exist
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[32m[2021-01-20 17:15:27 INFO] [activity:160][39m Probe: service-is-unavailable
+[36m[2021-01-20 17:15:27 DEBUG] [activity:179][39m   => succeeded with '{'status': 503, 'headers': {'Date': 'Wed, 20 Jan 2021 09:15:27 GMT', 'Server': 'WSGIServer/0.2 CPython/3.8.5', 'Content-type': 'text/plain', 'Content-Length': '26'}, 'body': 'Exchange file is not ready'}'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'activity'
+[36m[2021-01-20 17:15:27 DEBUG] [hypothesis:211][39m allowed tolerance is [200, 503]
+[32m[2021-01-20 17:15:27 INFO] [hypothesis:221][39m Steady state hypothesis is met!
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'hypothesis'
+[32m[2021-01-20 17:15:27 INFO] [run:809][39m Let's rollback...
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'rollback'
+[32m[2021-01-20 17:15:27 INFO] [rollback:25][39m No declared rollbacks, let's move on.
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'rollback'
+[32m[2021-01-20 17:15:27 INFO] [run:421][39m Experiment ended with status: completed
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:355][39m No controls to apply on 'experiment'
+[36m[2021-01-20 17:15:27 DEBUG] [__init__:72][39m Cleaning up controls
+[36m[2021-01-20 17:15:27 DEBUG] [caching:42][39m Clearing activities cache
+[36m[2021-01-21 10:16:28 DEBUG] [cli:74][39m ###############################################################################
+[36m[2021-01-21 10:16:28 DEBUG] [cli:75][39m Running command 'init'
+[36m[2021-01-21 10:16:28 DEBUG] [cli:79][39m Using settings file '/Users/dong/.chaostoolkit/settings.yaml'
+[36m[2021-01-21 10:16:31 DEBUG] [settings:26][39m The Chaos Toolkit settings file could not be found at '/Users/dong/.chaostoolkit/settings.yaml'.
